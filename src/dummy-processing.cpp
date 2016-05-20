@@ -10,9 +10,9 @@ DummyProcessing::DummyProcessing(std::string const& name) :
 		TaskContext(name), interval(200.0), ja(3) {
 	this->addAttribute("interval", interval);
 
-	ja.data_rad(0) = 1;
-	ja.data_rad(1) = 2;
-	ja.data_rad(2) = 4;
+	ja.angles(0) = 1;
+	ja.angles(1) = 2;
+	ja.angles(2) = 4;
 
 	this->addAttribute("jointAngles", ja);
 

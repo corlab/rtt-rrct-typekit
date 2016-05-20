@@ -1,6 +1,6 @@
 #include "rrctTypekit.hpp"
 
-namespace RRCT {
+namespace rrct {
 using namespace RTT;
 using namespace RTT::detail;
 using namespace std;
@@ -19,7 +19,7 @@ void loadJointAnglesTypes();
 //void loadWrenchTypes();
 
 std::string RRCTTypekitPlugin::getName() {
-	return "RRCT";
+	return "rrct";
 }
 
 bool RRCTTypekitPlugin::loadOperators() {
@@ -45,4 +45,4 @@ bool RRCTTypekitPlugin::loadTypes() {
 	return true;
 }
 }
-ORO_TYPEKIT_PLUGIN(RRCT::RRCTTypekitPlugin)
+ORO_TYPEKIT_PLUGIN(rrct::RRCTTypekitPlugin)

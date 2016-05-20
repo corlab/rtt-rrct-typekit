@@ -1,25 +1,25 @@
 #include "rrctTypekit.hpp"
 
-template class RTT::internal::DataSource<RRCT::JointAngles>;
-template class RTT::internal::AssignableDataSource<RRCT::JointAngles>;
-template class RTT::internal::ValueDataSource<RRCT::JointAngles>;
-template class RTT::internal::ConstantDataSource<RRCT::JointAngles>;
-template class RTT::internal::ReferenceDataSource<RRCT::JointAngles>;
-template class RTT::base::ChannelElement<RRCT::JointAngles>;
-template class RTT::OutputPort<RRCT::JointAngles>;
-template class RTT::InputPort<RRCT::JointAngles>;
-template class RTT::Property<RRCT::JointAngles>;
-template class RTT::Attribute<RRCT::JointAngles>;
+template class RTT::internal::DataSource<rrct::kinematics::JointAngles>;
+template class RTT::internal::AssignableDataSource<rrct::kinematics::JointAngles>;
+template class RTT::internal::ValueDataSource<rrct::kinematics::JointAngles>;
+template class RTT::internal::ConstantDataSource<rrct::kinematics::JointAngles>;
+template class RTT::internal::ReferenceDataSource<rrct::kinematics::JointAngles>;
+template class RTT::base::ChannelElement<rrct::kinematics::JointAngles>;
+template class RTT::OutputPort<rrct::kinematics::JointAngles>;
+template class RTT::InputPort<rrct::kinematics::JointAngles>;
+template class RTT::Property<rrct::kinematics::JointAngles>;
+template class RTT::Attribute<rrct::kinematics::JointAngles>;
 
-namespace RRCT {
+namespace rrct {
 using namespace std;
 using namespace RTT;
 
 void loadJointAnglesTypes() {
 	RTT::types::Types()->addType(
-			new RRCTTypeInfo<JointAngles>("RRCT.JointAngles"));
+			new RRCTTypeInfo<kinematics::JointAngles>("rrct.kinematics.JointAngles"));
 	RTT::types::Types()->addType(
-			new SequenceTypeInfo<std::vector<JointAngles> >(
+			new SequenceTypeInfo<std::vector<kinematics::JointAngles> >(
 					"RRCT.JointAngles[]"));
 }
 ;

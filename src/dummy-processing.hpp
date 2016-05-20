@@ -8,7 +8,7 @@
 #include <rtt/Property.hpp>
 #include <rtt/Attribute.hpp>
 
-#include "rrct/JointAngles.hpp"
+#include "rrct/kinematics/JointAngles.hpp"
 
 
 namespace RTT {
@@ -26,7 +26,7 @@ protected:
 	double interval;
 	double tmpInterval;
 
-	RRCT::JointAngles ja;
+	rrct::kinematics::JointAngles ja;
 };
 
 }

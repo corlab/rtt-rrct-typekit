@@ -19,7 +19,7 @@
 
 #include "rrctProperties.hpp"
 
-namespace RRCT {
+namespace rrct {
 using namespace RTT;
 using namespace RTT::detail;
 using namespace std;

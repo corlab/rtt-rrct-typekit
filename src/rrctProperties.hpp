@@ -1,7 +1,7 @@
 #ifndef RRCTPROPERTIES_HPP
 #define RRCTPROPERTIES_HPP
 
-#include "rrct/JointAngles.hpp"
+#include "rrct/kinematics/JointAngles.hpp"
 
 #include <rtt/Property.hpp>
 #include <rtt/PropertyBag.hpp>
@@ -9,10 +9,10 @@
 
 namespace RTT
 {
-    using namespace RRCT;
+    using namespace rrct;
 
-    void decomposeProperty(const JointAngles &chain, PropertyBag& target);
-    bool composeProperty(const PropertyBag& bag, JointAngles &chain);
+    void decomposeProperty(const kinematics::JointAngles &chain, PropertyBag& target);
+    bool composeProperty(const PropertyBag& bag, kinematics::JointAngles &chain);
 
 }
 #endif

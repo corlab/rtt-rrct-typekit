@@ -1,13 +1,13 @@
-#include "rrct/JointAngles.hpp"
+#include "rrct/kinematics/JointAngles.hpp"
 #include "rrctProperties.hpp"
 #include <boost/lexical_cast.hpp>
 #include <string>
 
-using namespace RRCT;
+using namespace rrct;
 
 namespace RTT
 {
-    void decomposeProperty(const JointAngles& joints, PropertyBag& targetbag)
+    void decomposeProperty(const kinematics::JointAngles& joints, PropertyBag& targetbag)
     {
 //        targetbag.setType("KDL.Chain");
 //        PropertyBag segment_bag;
@@ -17,7 +17,7 @@ namespace RTT
 //        }
     }
 
-    bool composeProperty(const PropertyBag& bag, JointAngles& joints)
+    bool composeProperty(const PropertyBag& bag, kinematics::JointAngles& joints)
     {
 //        Chain chain_new;
 //        if( bag.getType() =="KDL.Chain"){

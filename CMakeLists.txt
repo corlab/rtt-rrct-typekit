@@ -7,10 +7,6 @@ project(rrct_typekit)
 find_package(OROCOS-RTT REQUIRED)
 include(${OROCOS-RTT_USE_FILE_PATH}/UseOROCOS-RTT.cmake)
 
-#find_package(orocos_kdl REQUIRED)
-#include_directories(${orocos_kdl_INCLUDE_DIRS})
-#link_directories(${orocos_kdl_LIBRARY_DIRS})
-
 include_directories("/usr/include/eigen3")
 
 # Define the way rotation properties get written to XML
@@ -21,8 +17,21 @@ include_directories("/usr/include/eigen3")
 orocos_typekit(${PROJECT_NAME}
   src/rrctTypekit.cpp
   src/rrctTypekitJointAngles.cpp
-  src/rrct/JointAngles.hpp
-  src/rrct/JointAngles.cpp
+  src/rrct/kinematics/JointAngles.hpp
+  src/rrct/kinematics/JointAngles.cpp
+  
+  src/rrct/kinematics/JointVelocities.hpp
+  src/rrct/kinematics/JointVelocities.cpp
+  
+  src/rrct/kinematics/JointAccelerations.hpp
+  src/rrct/kinematics/JointAccelerations.cpp
+  
+  src/rrct/dynamics/JointTorques.hpp
+  src/rrct/dynamics/JointTorques.cpp
+ 
+  src/rrct/dynamics/JointImpedance.hpp
+  src/rrct/dynamics/JointImpedance.cpp
+      
   src/rrctProperties.cpp
   src/rrctProperties.hpp
   )
@@ -30,13 +39,6 @@ orocos_typekit(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}) # ${orocos_kdl_LIBRARIES})
 
 #add_subdirectory(src/corba)
-
-#file(GLOB LUA_FILES "lua/*.lua")
-#set(LUA_DESTINATION share)
-#if(catkin_FOUND)
-#  catkin_add_env_hooks(10.${PROJECT_NAME} SHELLS sh DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/env-hooks)
-#  set(LUA_DESTINATION ${CATKIN_GLOBAL_SHARE_DESTINATION})
-#endif()
 
 install(
   FILES src/rrctTypekitTypes.hpp
@@ -48,10 +50,9 @@ install(
 #  DESTINATION ${LUA_DESTINATION}/lua/5.1/${PROJECT_NAME}/
 #)
 
-orocos_component(Dummy src/dummy-processing.cpp src/dummy-processing.hpp src/rrct/JointAngles.hpp src/rrct/JointAngles.cpp)
+orocos_component(Dummy src/dummy-processing.cpp src/dummy-processing.hpp src/rrct/kinematics/JointAngles.hpp src/rrct/kinematics/JointAngles.cpp)
 target_link_libraries(Dummy)
 
 
 orocos_generate_package(
-  #DEPENDS orocos-kdl
 )
