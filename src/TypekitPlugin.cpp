@@ -1,10 +1,14 @@
 #include "TypekitPlugin.hpp"
 
+#include "JointAngles.hpp"
+
 namespace rstrt_typekit {
 
 TypekitPlugin typekit;
 
-void loadJointAnglesTypes();
+void loadJointAnglesType();
+void loadJointVelocitiesType();
+void loadJointAccelerationsType();
 
 std::string TypekitPlugin::getName() {
     return "rrct";
@@ -19,7 +23,9 @@ bool TypekitPlugin::loadConstructors() {
 }
 
 bool TypekitPlugin::loadTypes() {
-    loadJointAnglesTypes();
+    loadJointAnglesType();
+    loadJointVelocitiesType();
+    loadJointAccelerationsType();
 
     return true;
 }
