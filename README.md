@@ -1,2 +1,2 @@
-# rtt-rrct-typekit
-RTT typekit for Real-time Robot Control Types
+# rtt-rst-rt-typekit
+RTT typekit for RST Real-time Robot Control Types
