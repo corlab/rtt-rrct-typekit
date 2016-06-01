@@ -5,7 +5,8 @@ orocos_typekit(${LIBRARY_NAME}
                JointAngles.cpp
                JointVelocities.cpp
                JointAccelerations.cpp
-               JointTorques.cpp)
+               JointTorques.cpp
+               JointImpedance.cpp)
 
 target_link_libraries(${LIBRARY_NAME} ${RST-RT_LIBRARIES})
 
@@ -16,4 +17,5 @@ install(FILES       Types.hpp
                     JointVelocities.hpp
                     JointAccelerations.hpp
                     JointTorques.hpp
+                    JointImpedance.hpp
         DESTINATION include/orocos/rst-rt_typekit/typekit)

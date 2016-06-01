@@ -8,6 +8,7 @@ void loadJointAnglesType();
 void loadJointVelocitiesType();
 void loadJointAccelerationsType();
 void loadJointTorquesType();
+void loadJointImpedanceType();
 
 std::string TypekitPlugin::getName() {
     return "rrct";
@@ -26,6 +27,7 @@ bool TypekitPlugin::loadTypes() {
     loadJointVelocitiesType();
     loadJointAccelerationsType();
     loadJointTorquesType();
+    loadJointImpedanceType();
 
     return true;
 }
