@@ -1,7 +1,5 @@
 #include "TypekitPlugin.hpp"
 
-#include "JointAngles.hpp"
-
 namespace rstrt_typekit {
 
 TypekitPlugin typekit;
