@@ -28,7 +28,9 @@ void loadJointImpedanceType() {
 
     RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
 
-    repository->addType(new RTT::types::StructTypeInfo<rstrt::dynamics::JointImpedance>(NAME));
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::dynamics::JointImpedance,
+                                                       true>
+                        (NAME));
     RTT::types::TypeInfo* typeInfo = repository->type(NAME);
     typeInfo->addConstructor(RTT::types::newConstructor(&createJointImpedance_size));
 

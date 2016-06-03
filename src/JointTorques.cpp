@@ -28,7 +28,9 @@ void loadJointTorquesType() {
 
     RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
 
-    repository->addType(new RTT::types::StructTypeInfo<rstrt::dynamics::JointTorques>(NAME));
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::dynamics::JointTorques,
+                                                       true>
+                        (NAME));
     RTT::types::TypeInfo* typeInfo = repository->type(NAME);
     typeInfo->addConstructor(RTT::types::newConstructor(&createJointTorques_size));
 

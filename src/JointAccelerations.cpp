@@ -27,7 +27,9 @@ void loadJointAccelerationsType() {
 
     RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
 
-    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointAccelerations>(NAME));
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointAccelerations,
+                                                       true>
+                        (NAME));
     RTT::types::TypeInfo* typeInfo = repository->type(NAME);
     typeInfo->addConstructor(RTT::types::newConstructor(&createJointAccelerations_size));
 

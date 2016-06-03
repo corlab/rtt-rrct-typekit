@@ -28,7 +28,9 @@ void loadJointAnglesType() {
 
     RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
 
-    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointAngles>(NAME));
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointAngles,
+                                                       true>
+                        (NAME));
     RTT::types::TypeInfo* typeInfo = repository->type(NAME);
     typeInfo->addConstructor(RTT::types::newConstructor(&createJointAngles_size));
 

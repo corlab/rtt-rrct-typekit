@@ -28,7 +28,9 @@ void loadJointVelocitiesType() {
 
     RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
 
-    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointVelocities>(NAME));
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointVelocities,
+                                                       true>
+                        (NAME));
     RTT::types::TypeInfo* typeInfo = repository->type(NAME);
     typeInfo->addConstructor(RTT::types::newConstructor(&createJointVelocities_size));
 
