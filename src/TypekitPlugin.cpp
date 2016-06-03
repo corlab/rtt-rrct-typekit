@@ -4,9 +4,12 @@ namespace rstrt_typekit {
 
 TypekitPlugin typekit;
 
+void loadTranslationType();
+
 void loadJointAnglesType();
 void loadJointVelocitiesType();
 void loadJointAccelerationsType();
+
 void loadJointTorquesType();
 void loadJointImpedanceType();
 
@@ -23,9 +26,12 @@ bool TypekitPlugin::loadConstructors() {
 }
 
 bool TypekitPlugin::loadTypes() {
+    loadTranslationType();
+
     loadJointAnglesType();
     loadJointVelocitiesType();
     loadJointAccelerationsType();
+
     loadJointTorquesType();
     loadJointImpedanceType();
 
