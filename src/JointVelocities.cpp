@@ -19,13 +19,22 @@ template class RTT::Attribute<rstrt::kinematics::JointVelocities>;
 
 namespace rstrt_typekit {
 
+rstrt::kinematics::JointVelocities createJointVelocities_size(int size) {
+    return rstrt::kinematics::JointVelocities(size);
+}
+
 void loadJointVelocitiesType() {
-    RTT::types::Types()->addType(
-        new RTT::types::StructTypeInfo<rstrt::kinematics::JointVelocities>
-        ("rstrt.kinematics.JointVelocities"));
-    RTT::types::Types()->addType(
+    const std::string NAME("rstrt.kinematics.JointVelocities");
+
+    RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
+
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointVelocities>(NAME));
+    RTT::types::TypeInfo* typeInfo = repository->type(NAME);
+    typeInfo->addConstructor(RTT::types::newConstructor(&createJointVelocities_size));
+
+    repository->addType(
         new RTT::types::SequenceTypeInfo<std::vector<rstrt::kinematics::JointVelocities> >
-        ("rstrt.kinematics.JointVelocities[]"));
+        (NAME + "[]"));
 }
 
 }

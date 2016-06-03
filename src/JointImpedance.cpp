@@ -19,13 +19,22 @@ template class RTT::Attribute<rstrt::dynamics::JointImpedance>;
 
 namespace rstrt_typekit {
 
+rstrt::dynamics::JointImpedance createJointImpedance_size(int size) {
+    return rstrt::dynamics::JointImpedance(size);
+}
+
 void loadJointImpedanceType() {
-    RTT::types::Types()->addType(
-        new RTT::types::StructTypeInfo<rstrt::dynamics::JointImpedance>
-        ("rstrt.dynamics.JointImpedance"));
-    RTT::types::Types()->addType(
+    const std::string NAME("rstrt.dynamics.JointImpedance");
+
+    RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
+
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::dynamics::JointImpedance>(NAME));
+    RTT::types::TypeInfo* typeInfo = repository->type(NAME);
+    typeInfo->addConstructor(RTT::types::newConstructor(&createJointImpedance_size));
+
+    repository->addType(
         new RTT::types::SequenceTypeInfo<std::vector<rstrt::dynamics::JointImpedance> >
-        ("rstrt.dynamics.JointImpedance[]"));
+        (NAME + "[]"));
 }
 
 }

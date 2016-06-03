@@ -18,13 +18,22 @@ template class RTT::Attribute<rstrt::kinematics::JointAccelerations>;
 
 namespace rstrt_typekit {
 
+rstrt::kinematics::JointAccelerations createJointAccelerations_size(int size) {
+    return rstrt::kinematics::JointAccelerations(size);
+}
+
 void loadJointAccelerationsType() {
-    RTT::types::Types()->addType(
-        new RTT::types::StructTypeInfo<rstrt::kinematics::JointAccelerations>
-        ("rstrt.kinematics.JointAccelerations"));
-    RTT::types::Types()->addType(
+    const std::string NAME("rstrt.kinematics.JointAccelerations");
+
+    RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
+
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointAccelerations>(NAME));
+    RTT::types::TypeInfo* typeInfo = repository->type(NAME);
+    typeInfo->addConstructor(RTT::types::newConstructor(&createJointAccelerations_size));
+
+    repository->addType(
         new RTT::types::SequenceTypeInfo<std::vector<rstrt::kinematics::JointAccelerations> >
-        ("rstrt.kinematics.JointAccelerations[]"));
+        (NAME + "[]"));
 }
 
 }

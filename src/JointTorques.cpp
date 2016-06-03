@@ -19,13 +19,22 @@ template class RTT::Attribute<rstrt::dynamics::JointTorques>;
 
 namespace rstrt_typekit {
 
+rstrt::dynamics::JointTorques createJointTorques_size(int size) {
+    return rstrt::dynamics::JointTorques(size);
+}
+
 void loadJointTorquesType() {
-    RTT::types::Types()->addType(
-        new RTT::types::StructTypeInfo<rstrt::dynamics::JointTorques>
-        ("rstrt.dynamics.JointTorques"));
-    RTT::types::Types()->addType(
+    const std::string NAME("rstrt.dynamics.JointTorques");
+
+    RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
+
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::dynamics::JointTorques>(NAME));
+    RTT::types::TypeInfo* typeInfo = repository->type(NAME);
+    typeInfo->addConstructor(RTT::types::newConstructor(&createJointTorques_size));
+
+    repository->addType(
         new RTT::types::SequenceTypeInfo<std::vector<rstrt::dynamics::JointTorques> >
-        ("rstrt.dynamics.JointTorques[]"));
+        (NAME + "[]"));
 }
 
 }

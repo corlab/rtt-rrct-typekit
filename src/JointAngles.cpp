@@ -19,13 +19,22 @@ template class RTT::Attribute<rstrt::kinematics::JointAngles>;
 
 namespace rstrt_typekit {
 
+rstrt::kinematics::JointAngles createJointAngles_size(int size) {
+    return rstrt::kinematics::JointAngles(size);
+}
+
 void loadJointAnglesType() {
-    RTT::types::Types()->addType(
-        new RTT::types::StructTypeInfo<rstrt::kinematics::JointAngles>
-        ("rstrt.kinematics.JointAngles"));
-    RTT::types::Types()->addType(
+    const std::string NAME("rstrt.kinematics.JointAngles");
+
+    RTT::types::TypeInfoRepository::shared_ptr repository = RTT::types::Types();
+
+    repository->addType(new RTT::types::StructTypeInfo<rstrt::kinematics::JointAngles>(NAME));
+    RTT::types::TypeInfo* typeInfo = repository->type(NAME);
+    typeInfo->addConstructor(RTT::types::newConstructor(&createJointAngles_size));
+
+    repository->addType(
         new RTT::types::SequenceTypeInfo<std::vector<rstrt::kinematics::JointAngles> >
-        ("rstrt.kinematics.JointAngles[]"));
+        (NAME + "[]"));
 }
 
 }
