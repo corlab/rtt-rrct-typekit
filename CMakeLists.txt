@@ -6,6 +6,11 @@ set(LIBRARY_NAME ${CMAKE_PROJECT_NAME})
 
 # Dependencies
 
+find_package(Eigen3)
+
+add_definitions(${EIGEN3_DEFINITIONS})
+include_directories(${EIGEN3_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIRS})
+
 find_package(rst-rt REQUIRED)
 
 include_directories(${RST-RT_INCLUDE_DIRS})
