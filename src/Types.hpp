@@ -5,3 +5,4 @@
 #include "JointAccelerations.hpp"
 #include "JointTorques.hpp"
 #include "JointImpedance.hpp"
+#include "JointState.hpp"

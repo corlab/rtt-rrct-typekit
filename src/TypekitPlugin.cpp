@@ -13,6 +13,8 @@ void loadJointAccelerationsType();
 void loadJointTorquesType();
 void loadJointImpedanceType();
 
+void loadJointStateType();
+
 std::string TypekitPlugin::getName() {
     return "rrct";
 }
@@ -34,6 +36,8 @@ bool TypekitPlugin::loadTypes() {
 
     loadJointTorquesType();
     loadJointImpedanceType();
+
+    loadJointStateType();
 
     return true;
 }
