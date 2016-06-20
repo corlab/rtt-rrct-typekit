@@ -9,11 +9,13 @@ void loadTranslationType();
 void loadJointAnglesType();
 void loadJointVelocitiesType();
 void loadJointAccelerationsType();
+void loadJointJerksType();
 
 void loadJointTorquesType();
 void loadJointImpedanceType();
 
 void loadJointStateType();
+void loadWeightsType();
 
 std::string TypekitPlugin::getName() {
     return "rrct";
@@ -33,11 +35,13 @@ bool TypekitPlugin::loadTypes() {
     loadJointAnglesType();
     loadJointVelocitiesType();
     loadJointAccelerationsType();
+    loadJointJerksType();
 
     loadJointTorquesType();
     loadJointImpedanceType();
 
     loadJointStateType();
+    loadWeightsType();
 
     return true;
 }
