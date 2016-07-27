@@ -19,7 +19,7 @@ public:
 };
 
 /**
- * The single global instance of the RRCT Typekit.
+ * The single global instance of the RST-RT Typekit.
  */
 extern TypekitPlugin typekit;
 

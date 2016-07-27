@@ -21,7 +21,7 @@ void loadJointStateType();
 void loadWeightsType();
 
 std::string TypekitPlugin::getName() {
-    return "rrct";
+    return "rst-rt";
 }
 
 bool TypekitPlugin::loadOperators() {
