@@ -12,6 +12,9 @@ orocos_typekit(${LIBRARY_NAME}
 
                JointTorques.cpp
                JointImpedance.cpp
+               Forces.cpp
+               Torques.cpp
+               Wrench.cpp
 
                JointState.cpp
                Weights.cpp
@@ -32,6 +35,9 @@ install(FILES       Types.hpp
 
                     JointTorques.hpp
                     JointImpedance.hpp
+                    Forces.hpp
+                    Torques.hpp
+                    Wrench.hpp
 
                     JointState.hpp
                     Weights.hpp

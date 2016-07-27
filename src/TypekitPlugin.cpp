@@ -13,6 +13,9 @@ void loadJointJerksType();
 
 void loadJointTorquesType();
 void loadJointImpedanceType();
+void loadForcesType();
+void loadTorquesType();
+void loadWrenchType();
 
 void loadJointStateType();
 void loadWeightsType();
@@ -39,6 +42,9 @@ bool TypekitPlugin::loadTypes() {
 
     loadJointTorquesType();
     loadJointImpedanceType();
+    loadForcesType();
+    loadTorquesType();
+    loadWrenchType();
 
     loadJointStateType();
     loadWeightsType();
