@@ -1,6 +1,8 @@
 #pragma once
 
 #include <rst-rt/dynamics/Wrench.hpp>
+#include <rst-rt/dynamics/Forces.hpp>
+#include <rst-rt/dynamics/Torques.hpp>
 
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/array.hpp>

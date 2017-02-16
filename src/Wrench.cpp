@@ -24,6 +24,11 @@ rstrt::dynamics::Wrench
     return rstrt::dynamics::Wrench(x, y, z, a, b, c);
 }
 
+rstrt::dynamics::Wrench
+ createWrench_NestedTypes(rstrt::dynamics::Forces f, rstrt::dynamics::Torques t) {
+    return rstrt::dynamics::Wrench(f, t);
+}
+
 void loadWrenchType() {
     const std::string NAME("rstrt.dynamics.Wrench");
 
@@ -34,6 +39,8 @@ void loadWrenchType() {
                         (NAME));
     RTT::types::TypeInfo* typeInfo = repository->type(NAME);
     typeInfo->addConstructor(RTT::types::newConstructor(&createWrench_Values));
+
+    typeInfo->addConstructor(RTT::types::newConstructor(&createWrench_NestedTypes));
 
     repository->addType(
         new RTT::types::SequenceTypeInfo<std::vector<rstrt::dynamics::Wrench> >
