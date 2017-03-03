@@ -5,6 +5,9 @@ namespace rstrt_typekit {
 TypekitPlugin typekit;
 
 void loadTranslationType();
+void loadRotationType();
+void loadLinearAccelerationType();
+void loadAngularVelocityType();
 
 void loadJointAnglesType();
 void loadJointVelocitiesType();
@@ -19,6 +22,7 @@ void loadWrenchType();
 
 void loadJointStateType();
 void loadWeightsType();
+void loadIMUType();
 
 std::string TypekitPlugin::getName() {
     return "rst-rt";
@@ -34,6 +38,9 @@ bool TypekitPlugin::loadConstructors() {
 
 bool TypekitPlugin::loadTypes() {
     loadTranslationType();
+    loadRotationType();
+    loadLinearAccelerationType();
+    loadAngularVelocityType();
 
     loadJointAnglesType();
     loadJointVelocitiesType();
@@ -48,6 +55,7 @@ bool TypekitPlugin::loadTypes() {
 
     loadJointStateType();
     loadWeightsType();
+    loadIMUType();
 
     return true;
 }

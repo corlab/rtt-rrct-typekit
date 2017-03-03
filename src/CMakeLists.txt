@@ -4,6 +4,9 @@ orocos_typekit(${LIBRARY_NAME}
                TypekitPlugin.cpp
 
                Translation.cpp
+               Rotation.cpp
+	           LinearAcceleration.cpp
+	           AngularVelocity.cpp
 
                JointAngles.cpp
                JointVelocities.cpp
@@ -18,6 +21,7 @@ orocos_typekit(${LIBRARY_NAME}
 
                JointState.cpp
                Weights.cpp
+               IMU.cpp
 )
 
 target_link_libraries(${LIBRARY_NAME} ${RST-RT_LIBRARIES})
@@ -27,6 +31,9 @@ target_link_libraries(${LIBRARY_NAME} ${RST-RT_LIBRARIES})
 install(FILES       Types.hpp
 
                     Translation.hpp
+                    Rotation.hpp
+                    LinearAcceleration.hpp
+                    AngularVelocity.hpp
 
                     JointAngles.hpp
                     JointVelocities.hpp
@@ -41,4 +48,5 @@ install(FILES       Types.hpp
 
                     JointState.hpp
                     Weights.hpp
+                    IMU.hpp
         DESTINATION include/orocos/rst-rt_typekit/typekit)
