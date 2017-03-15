@@ -6,6 +6,7 @@ TypekitPlugin typekit;
 
 void loadTranslationType();
 void loadRotationType();
+void loadPoseType();
 void loadLinearAccelerationType();
 void loadAngularVelocityType();
 
@@ -13,6 +14,8 @@ void loadJointAnglesType();
 void loadJointVelocitiesType();
 void loadJointAccelerationsType();
 void loadJointJerksType();
+void loadLinearVelocitiesType();
+void loadTwistType();
 
 void loadJointTorquesType();
 void loadJointImpedanceType();
@@ -23,6 +26,7 @@ void loadWrenchType();
 void loadJointStateType();
 void loadWeightsType();
 void loadIMUType();
+void loadOdometryType();
 
 std::string TypekitPlugin::getName() {
     return "rst-rt";
@@ -39,6 +43,7 @@ bool TypekitPlugin::loadConstructors() {
 bool TypekitPlugin::loadTypes() {
     loadTranslationType();
     loadRotationType();
+    loadPoseType();
     loadLinearAccelerationType();
     loadAngularVelocityType();
 
@@ -46,6 +51,8 @@ bool TypekitPlugin::loadTypes() {
     loadJointVelocitiesType();
     loadJointAccelerationsType();
     loadJointJerksType();
+    loadLinearVelocitiesType();
+    loadTwistType();
 
     loadJointTorquesType();
     loadJointImpedanceType();
@@ -56,6 +63,7 @@ bool TypekitPlugin::loadTypes() {
     loadJointStateType();
     loadWeightsType();
     loadIMUType();
+    loadOdometryType();
 
     return true;
 }
