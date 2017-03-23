@@ -21,12 +21,12 @@ template class RTT::Attribute<rstrt::geometry::Translation>;
 namespace rstrt_typekit {
 
 rstrt::geometry::Translation
- createTranslation_Values(double x, double y, double z) {
+ createTranslation_Values(float x, float y, float z) {
     return rstrt::geometry::Translation(x, y, z);
 }
 
 rstrt::geometry::Translation
- createTranslation_Values_FrameId(double x, double y, double z,
+ createTranslation_Values_FrameId(float x, float y, float z,
                                   const std::string& frameId) {
     return rstrt::geometry::Translation(x, y, z, frameId);
 }
