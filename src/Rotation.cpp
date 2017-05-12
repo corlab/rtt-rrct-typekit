@@ -30,6 +30,15 @@ rstrt::geometry::Rotation createRotation_Values_FrameId(double qw, double qx,
 	return rstrt::geometry::Rotation(qw, qx, qy, qz, frameId);
 }
 
+rstrt::geometry::Rotation createRotation_Values_RPY(double r, double p, double y) {
+	return rstrt::geometry::Rotation(r, p, y);
+}
+
+rstrt::geometry::Rotation createRotation_Values_RPY_FrameId(double r, double p,
+		double y, const std::string& frameId) {
+	return rstrt::geometry::Rotation(r, p, y, frameId);
+}
+
 void loadRotationType() {
 	const std::string NAME("rstrt.geometry.Rotation");
 
@@ -43,6 +52,12 @@ void loadRotationType() {
 			RTT::types::newConstructor(&createRotation_Values));
 	typeInfo->addConstructor(
 			RTT::types::newConstructor(&createRotation_Values_FrameId));
+
+	typeInfo->addConstructor(
+			RTT::types::newConstructor(&createRotation_Values_RPY));
+
+	typeInfo->addConstructor(
+			RTT::types::newConstructor(&createRotation_Values_RPY_FrameId));
 
 	repository->addType(
 			new RTT::types::SequenceTypeInfo<
