@@ -5,7 +5,7 @@ project(rst-rt_typekit CXX)
 set(LIBRARY_NAME ${CMAKE_PROJECT_NAME})
 
 # Dependencies
-
+find_package(YCM QUIET)
 find_package(Eigen3)
 
 add_definitions(${EIGEN3_DEFINITIONS})
