@@ -22,13 +22,13 @@ namespace rstrt_typekit {
 
 rstrt::monitoring::CallTraceSample createCallTraceSample_ValuesNNT(const std::string& callName,
 																   const std::string& containerName,
-																   const double callTime) {
+																   const uint_least64_t callTime) {
 	return rstrt::monitoring::CallTraceSample(callName, containerName, callTime);
 }
 
 rstrt::monitoring::CallTraceSample createCallTraceSample_ValuesNNTT(const std::string& callName,
 																	const std::string& containerName,
-																	const double callTime,
+																	const uint_least64_t callTime,
 																	const int callType) {
 	return rstrt::monitoring::CallTraceSample(callName, containerName, callTime, callType);
 }

@@ -5,6 +5,8 @@
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/array.hpp>
 
+#include <cstdint>
+
 #ifdef CORELIB_DATASOURCE_HPP
 extern template class RTT::internal::DataSource< ::rstrt::monitoring::CallTraceSample >;
 extern template class RTT::internal::AssignableDataSource< ::rstrt::monitoring::CallTraceSample >;
