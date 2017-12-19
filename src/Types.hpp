@@ -23,3 +23,5 @@
 #include "Weights.hpp"
 #include "IMU.hpp"
 #include "Odometry.hpp"
+
+#include "CallTraceSample.hpp"

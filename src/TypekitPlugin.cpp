@@ -28,6 +28,8 @@ void loadWeightsType();
 void loadIMUType();
 void loadOdometryType();
 
+void loadCallTraceSampleType();
+
 std::string TypekitPlugin::getName() {
     return "rst-rt";
 }
@@ -64,6 +66,8 @@ bool TypekitPlugin::loadTypes() {
     loadWeightsType();
     loadIMUType();
     loadOdometryType();
+
+    loadCallTraceSampleType();
 
     return true;
 }

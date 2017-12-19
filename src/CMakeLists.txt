@@ -26,6 +26,8 @@ orocos_typekit(${LIBRARY_NAME}
                Weights.cpp
                IMU.cpp
                Odometry.cpp
+
+               CallTraceSample.cpp
 )
 
 target_link_libraries(${LIBRARY_NAME} ${RST-RT_LIBRARIES})
@@ -57,4 +59,6 @@ install(FILES       Types.hpp
                     Weights.hpp
                     IMU.hpp
                     Odometry.hpp
+                    
+                    CallTraceSample.hpp
         DESTINATION include/orocos/rst-rt_typekit/typekit)
