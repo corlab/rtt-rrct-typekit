@@ -36,9 +36,9 @@ namespace serialization {
 template<typename Archive>
 void serialize(Archive& a, ::rstrt::geometry::Rotation& j, unsigned int version) {
     a & make_nvp("rotation", j.rotation);
-    if (!j.frameId.empty()) {
+    // if (!j.frameId.empty()) {
         a & make_nvp("frameId", j.frameId);
-    }
+    // }
     a & make_nvp("qw", j.rotation(0));
     a & make_nvp("qx", j.rotation(1));
     a & make_nvp("qy", j.rotation(2));

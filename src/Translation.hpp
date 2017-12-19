@@ -36,9 +36,9 @@ namespace serialization {
 template<typename Archive>
 void serialize(Archive& a, ::rstrt::geometry::Translation& j, unsigned int version) {
     a & make_nvp("translation", j.translation);
-    if (!j.frameId.empty()) {
+    // if (!j.frameId.empty()) {
         a & make_nvp("frameId", j.frameId);
-    }
+    // }
     a & make_nvp("x", j.translation(0));
     a & make_nvp("y", j.translation(1));
     a & make_nvp("z", j.translation(2));
