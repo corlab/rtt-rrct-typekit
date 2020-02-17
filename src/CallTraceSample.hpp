@@ -40,6 +40,7 @@ void serialize(Archive& a, ::rstrt::monitoring::CallTraceSample& j, unsigned int
     a & make_nvp("call_name", j.call_name);
     a & make_nvp("container_name", j.container_name);
     a & make_nvp("call_time", j.call_time);
+    a & make_nvp("call_duration", j.call_duration);
     a & make_nvp("call_type", j.call_type);
 }
 

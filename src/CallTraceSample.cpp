@@ -30,7 +30,22 @@ rstrt::monitoring::CallTraceSample createCallTraceSample_ValuesNNTT(const std::s
 																	const std::string& containerName,
 																	const uint_least64_t callTime,
 																	const int callType) {
-	return rstrt::monitoring::CallTraceSample(callName, containerName, callTime, callType);
+	return rstrt::monitoring::CallTraceSample(callName, containerName, callTime, 0, callType);
+}
+
+rstrt::monitoring::CallTraceSample createCallTraceSample_ValuesNNTDT(const std::string& callName,
+																	const std::string& containerName,
+																	const uint_least64_t callTime,
+																	const uint_least64_t callDuration,
+																	const int callType) {
+	return rstrt::monitoring::CallTraceSample(callName, containerName, callTime, callDuration, callType);
+}
+
+rstrt::monitoring::CallTraceSample createCallTraceSample_ValuesNNTD(const std::string& callName,
+																	const std::string& containerName,
+																	const uint_least64_t callTime,
+																	const uint_least64_t callDuration) {
+	return rstrt::monitoring::CallTraceSample(callName, containerName, callTime, callDuration, 0);
 }
 
 void loadCallTraceSampleType() {
@@ -45,6 +60,10 @@ void loadCallTraceSampleType() {
 			RTT::types::newConstructor(&createCallTraceSample_ValuesNNT));
 	typeInfo->addConstructor(
 			RTT::types::newConstructor(&createCallTraceSample_ValuesNNTT));
+	typeInfo->addConstructor(
+		RTT::types::newConstructor(&createCallTraceSample_ValuesNNTDT));
+	typeInfo->addConstructor(
+		RTT::types::newConstructor(&createCallTraceSample_ValuesNNTD));
 
 	repository->addType(
 			new RTT::types::SequenceTypeInfo<
