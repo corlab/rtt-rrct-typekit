@@ -6,8 +6,8 @@ orocos_typekit(${LIBRARY_NAME}
                Translation.cpp
                Rotation.cpp
                Pose.cpp
-	           LinearAcceleration.cpp
-	           AngularVelocity.cpp
+               LinearAcceleration.cpp
+               AngularVelocity.cpp
 
                JointAngles.cpp
                JointVelocities.cpp
@@ -28,6 +28,8 @@ orocos_typekit(${LIBRARY_NAME}
                Odometry.cpp
 
                CallTraceSample.cpp
+
+               MatrixDouble.cpp
 )
 
 target_link_libraries(${LIBRARY_NAME} ${RST-RT_LIBRARIES})
@@ -61,4 +63,6 @@ install(FILES       Types.hpp
                     Odometry.hpp
                     
                     CallTraceSample.hpp
+
+                    MatrixDouble.hpp
         DESTINATION include/orocos/rst-rt_typekit/typekit)

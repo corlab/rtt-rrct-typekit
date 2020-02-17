@@ -25,3 +25,5 @@
 #include "Odometry.hpp"
 
 #include "CallTraceSample.hpp"
+
+#include "MatrixDouble.hpp"

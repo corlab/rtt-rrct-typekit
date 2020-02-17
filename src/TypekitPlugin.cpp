@@ -30,6 +30,8 @@ void loadOdometryType();
 
 void loadCallTraceSampleType();
 
+void loadMatrixDoubleType();
+
 std::string TypekitPlugin::getName() {
     return "rst-rt";
 }
@@ -68,6 +70,8 @@ bool TypekitPlugin::loadTypes() {
     loadOdometryType();
 
     loadCallTraceSampleType();
+
+    loadMatrixDoubleType();
 
     return true;
 }
